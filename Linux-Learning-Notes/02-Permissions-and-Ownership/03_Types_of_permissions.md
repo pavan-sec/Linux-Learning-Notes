@@ -23,12 +23,8 @@ There are three primary types of permissions you can apply:
 ### Permission String Breakdown
 
 Permissions are typically displayed in a 10-character string, for example, `drwxr-xr-x`. Let's break down what each part signifies:
-
-drwxr-xr-x
-│ │   │  └── Others (everyone else)
-│ │   └───── Group
-│ └──────── User (owner)
-└────────── File type ('d' means directory)
+ 
+ <img width="433" height="172" alt="image" src="https://github.com/user-attachments/assets/3844adf3-71f3-4450-bb2f-b62834b84add" />
 
 * **1st character:** Indicates the **file type**.
     * `d`: Directory
