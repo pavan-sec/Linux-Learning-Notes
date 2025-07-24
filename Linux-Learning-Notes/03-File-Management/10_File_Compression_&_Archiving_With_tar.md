@@ -3,8 +3,8 @@
 
 In Linux, you'll frequently need to bundle multiple files into a single file or make large files smaller for storage or transfer. This involves two different concepts: **archiving** and **compression**.
 
-- **Archiving 🗂️:** This is the process of combining multiple files and directories into a single file, called an **archive**. The most common command for this is `tar`. An archive itself is not any smaller than the sum of the original files.
-- **Compression 🤏:** This is the process of taking a single file and shrinking its size using an algorithm. Common tools for this are `gzip` and `bzip2`.
+- **Archiving :** This is the process of combining multiple files and directories into a single file, called an **archive**. The most common command for this is `tar`. An archive itself is not any smaller than the sum of the original files.
+- **Compression:** This is the process of taking a single file and shrinking its size using an algorithm. Common tools for this are `gzip` and `bzip2`.
 
 Often, you will do both: first, you archive many files into one, and then you compress that single archive file. The `tar` command is powerful enough to do both steps at once.
 
@@ -70,7 +70,7 @@ Bash
 `# This will create 'important_document.txt.gz' and remove the original file
 gzip important_document.txt
 
-# This will restore the original file and remove the .gz file
+##### This will restore the original file and remove the .gz file
 gunzip important_document.txt.gz`
 
 ### `bzip2`
