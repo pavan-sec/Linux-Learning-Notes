@@ -52,4 +52,4 @@ Save time by reusing previous commands and using auto-completion.
 | `Tab` Key     | **Auto-completes** commands, filenames, and directory names. Pressing twice gives suggestions. | Saves typing, prevents typos, confirms paths/commands.     |
 | `Alt + .` or `Esc + .` | Cycles through the **last argument** of previous commands. | Quickly reuse arguments from recent commands without retyping. |
 
-These shortcuts, combined with a solid understanding of the commands themselves, will make your Linux terminal experience much more efficient!
+These shortcuts will make your Linux terminal experience much more efficient!
