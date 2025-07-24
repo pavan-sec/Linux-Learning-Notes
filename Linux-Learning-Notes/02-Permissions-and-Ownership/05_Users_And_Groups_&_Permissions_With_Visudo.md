@@ -38,11 +38,10 @@ A new user account is locked until you set a password for it. The `passwd` comma
 Bash
 
 `sudo passwd alex
-
-# You will be prompted to enter and re-enter the new password.
-# Enter new UNIX password:
-# Retype new UNIX password:
-# passwd: password updated successfully`
+##### You will be prompted to enter and re-enter the new password.
+##### Enter new UNIX password:
+##### Retype new UNIX password:
+##### passwd: password updated successfully
 
 > Note: To change your own password, just type passwd without any username.
 > 
