@@ -53,13 +53,13 @@ The `du` command can produce a lot of output. You can pipe (`|`) its output to t
 Bash
 
 `# First, run 'du' with the -a (all files) and -h (human-readable) flags
-# Then, pipe the result to 'grep' to filter for lines ending in ".log"
+#### Then, pipe the result to 'grep' to filter for lines ending in ".log"
 du -ah /var/log | grep "\.log$"
 
-# Example Output:
-# 8.0K    /var/log/boot.log
-# 24K     /var/log/Xorg.0.log
-# 120K    /var/log/kern.log`
+#### Example Output:
+#### 8.0K    /var/log/boot.log
+#### 24K     /var/log/Xorg.0.log
+#### 120K    /var/log/kern.log`
 
 ## `df` - Report Filesystem Space Usage 💿
 
@@ -83,9 +83,9 @@ Bash
 `# Check the usage of the root filesystem in a human-readable format
 df -h /
 
-# Example Output:
-# Filesystem      Size  Used Avail Use% Mounted on
-# /dev/sda1       228G   60G  157G  28% /`
+#### Example Output:
+#### Filesystem      Size  Used Avail Use% Mounted on
+#### /dev/sda1       228G   60G  157G  28% /`
 
 ### Filtering `df` with `grep`
 
@@ -99,9 +99,9 @@ Bash
 # The '^' means "start of the line"
 df -h | grep "^/dev/sd"
 
-# Example Output:
-# /dev/sda1       228G   60G  157G  28% /
-# /dev/sdb2       931G  450G  481G  49% /mnt/data`
+#### Example Output:
+#### /dev/sda1       228G   60G  157G  28% /
+#### /dev/sdb2       931G  450G  481G  49% /mnt/data`
 
 **Example 2:** Find all filesystems of a specific type.
 
@@ -110,6 +110,6 @@ Bash
 `# Run 'df' with the -T flag and filter for the 'ext4' filesystem type
 df -hT | grep "ext4"
 
-# Example Output:
-# /dev/sda1       ext4    228G   60G  157G  28% /
-# /dev/sdb2       ext4    931G  450G  481G  49% /mnt/data`
+#### Example Output:
+#### /dev/sda1       ext4    228G   60G  157G  28% /
+#### /dev/sdb2       ext4    931G  450G  481G  49% /mnt/data`
