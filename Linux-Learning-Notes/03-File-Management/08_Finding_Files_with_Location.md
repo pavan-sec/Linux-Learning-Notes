@@ -1,7 +1,7 @@
 
 # Finding Files: `locate`, `find`, Wildcards, & `xargs`
 
-Finding files efficiently is a common task in Linux. This section covers various tools and techniques, from quick database searches to powerful real-time filesystem scans and useful utilities for processing results.
+#### Finding files efficiently is a common task in Linux. This section covers various tools and techniques, from quick database searches to powerful real-time filesystem scans and useful utilities for processing results.
 ---
 ## 1. Finding Files Quickly with `locate`
 The `locate` command is designed for **fast searches** for files and directories by name. It achieves this speed by searching a **pre-built database** of filenames. This database (`/var/lib/mlocate/mlocate.db` on many systems) is typically updated daily by a cron job, so `locate` might not find very recently created or deleted files until the next database update.
@@ -228,7 +228,7 @@ Bash
 - **`I {}`**: Replaces the placeholder `{}` with each input item. Useful when the command needs arguments in specific positions.Bash
     
     `ls *.txt | xargs -I {} cp {} /backup/
-    # Copies each .txt file to /backup/`
+    #### Copies each .txt file to /backup/`
     
 - **`n <num>`**: Pass at most `num` arguments to the command per execution.Bash
     
@@ -237,9 +237,5 @@ Bash
 - **`P <num>`**: Run up to `num` processes at a time. Useful for parallel execution.Bash
     
     `find . -type f -name "*.jpg" -print0 | xargs -0 -P 4 convert -resize 50% {} resized_{}
-    # Resizes JPGs in parallel`
+    #### Resizes JPGs in parallel`
     
-- **`p` or `-interactive`**: Prompt the user whether to run each command line.Bash
-    
-    `find . -name "*.bak" | xargs -p rm
-    # Prompts before each rm command`
