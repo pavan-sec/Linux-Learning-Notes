@@ -1,0 +1,282 @@
+## LINUX COMMAND LINE CHEAT SHEET
+
+- 1 - SYSTEM INFORMATION Table of Contents
+- 2 - HARDWARE INFORMATION
+- 3 - PERFORMANCE MONITORING AND STATISTICS
+- 4 - USER INFORMATION AND MANAGEMENT
+- 5 - FILE AND DIRECTORY COMMANDS
+- 6 – MANIPULATING DATA
+- 7 - PROCESS MANAGEMENT
+- 8 - FILE PERMISSIONS
+- 9 - NETWORKING
+- 10 - ARCHIVES (TAR FILES)
+- 11 - INSTALLING PACKAGES
+- 12 - SEARCH
+- 13 - SSH LOGINS
+- 14 - FILE TRANSFERS
+- 15 - DISK USAGE
+- 16 - DIRECTORY NAVIGATION
+- 17 - PROGRAMMING
+
+
+
+```
+   ## 1 - SYSTEM INFORMATION
+
+| **Command**      | **Description**                                                |
+| ---------------- | -------------------------------------------------------------- |
+| `uname -a`       | Display Linux system information                               |
+| `uname -r`       | Display kernel release information                             |
+| `lsb_release -a` | Show which version of Ubuntu is installed                      |
+| `uptime`         | Show how long the system has been running along with load info |
+| `hostname`       | Show system host name                                          |
+| `hostname -I`    | Display the IP addresses of the host                           |
+| `last reboot`    | Show system reboot history                                     |
+| `date`           | Show the current date and time                                 |
+| `cal`            | Show this month's calendar                                     |
+| `w`              | Display who is online                                          |
+| `whoami`         | Show the current logged in user                                |
+
+## 2 - HARDWARE INFORMATION
+
+| **Command**           | **Description**                                                                  |
+| --------------------- | -------------------------------------------------------------------------------- |
+| `cat /proc/cpuinfo`   | Display CPU information                                                          |
+| `cat /proc/meminfo`   | Display memory information                                                       |
+| `free -h`             | Display free and used memory (`-h` for human-readable, `-m` for MB, `-g` for GB) |
+| `lspci -tv`           | Display PCI devices in a tree view                                               |
+| `lsusb -tv`           | Display USB devices in a tree view                                               |
+| `dmidecode`           | Display DMI/SMBIOS hardware information from the BIOS                            |
+| `hdparm -i /dev/sda`  | Show detailed information about disk `sda`                                       |
+| `hdparm -tT /dev/sda` | Perform a read speed test on disk `sda`                                          |
+
+## 3 - PERFORMANCE MONITORING AND STATISTICS
+
+| **Command**                 | **Description**                                         |
+| --------------------------- | ------------------------------------------------------- |
+| `top`                       | Display and manage the top processes                    |
+| `mpstat 1`                  | Display processor related statistics                    |
+| `vmstat 1`                  | Display virtual memory statistics                       |
+| `iostat 1`                  | Display I/O statistics                                  |
+| `tcpdump -i eth0`           | Capture and display all packets on interface eth0       |
+| `tcpdump -i eth0 'port 80'` | Monitor all traffic on port 80 (HTTP)                   |
+| `lsof`                      | List all open files on the system                       |
+| `lsof -u user`              | List files opened by user                               |
+| `free -h`                   | Display memory usage in human readable format           |
+| `watch df -h`               | Execute "df -h" periodically to show disk usage updates |
+
+## 4 - USER INFORMATION AND MANAGEMENT
+
+| **Command**                       | **Description**                                        |
+| --------------------------------- | ------------------------------------------------------ |
+| `id`                              | Display the user and group ids of the current user     |
+| `last`                            | Display the last users who have logged onto the system |
+| `who`                             | Show who is logged into the system                     |
+| `w`                               | Show who is logged in and what they are doing          |
+| `groupadd test`                   | Create a group named "test"                            |
+| `useradd -c "John Smith" -m john` | Create user john with home directory and comment       |
+| `userdel john`                    | Delete the john account                                |
+| `usermod -aG sales john`          | Add the john account to the sales group                |
+
+## 5 - FILE AND DIRECTORY COMMANDS
+
+| **Command**                          | **Description**                                   |
+| ------------------------------------ | ------------------------------------------------- |
+| `ls -al`                             | List all files in a detailed format               |
+| `pwd`                                | Display current directory                         |
+| `mkdir directory`                    | Create a new directory                            |
+| `rm file`                            | Remove a file                                     |
+| `rm -r directory`                    | Recursively delete a directory                    |
+| `rm -f file`                         | Force delete a file                               |
+| `rm -rf directory`                   | Forcefully delete directory and contents          |
+| `rmdir`                              | Delete a directory                                |
+| `cp file1 file2`                     | Copy file1 to file2                               |
+| `cp -r source_directory destination` | Recursively copy source\_directory to destination |
+| `mv file1 file2`                     | Rename or move file                               |
+| `ln -s /path/to/file linkname`       | Create symbolic link                              |
+| `touch file`                         | Create an empty file or update timestamp          |
+| `cat file`                           | View file contents                                |
+| `less file`                          | Browse through a text file                        |
+| `head file`                          | Show first 10 lines                               |
+| `tail file`                          | Show last 10 lines                                |
+| `tail -f file`                       | Follow last 10 lines as file grows                |
+| `lpr`                                | Print file                                        |
+| `chgrp`                              | Change file group                                 |
+| `more`, `page`                       | View file content at terminal                     |
+| `file`                               | Determine file type                               |
+| `vi`, `gedit`                        | Text editors (vi for CLI, gedit for GUI)          |
+
+## 6 – MANIPULATING DATA
+
+| **Command**          | **Description**                    |
+| -------------------- | ---------------------------------- |
+| `awk`, `perl`        | Data/text processing languages     |
+| `cmp`, `diff`        | Compare contents of two files      |
+| `cut`, `tr`          | Cut or translate characters        |
+| `sort`, `uniq`       | Sort and filter duplicate lines    |
+| `paste`, `join`      | Merge or join file contents        |
+| `sed`                | Stream editor                      |
+| `split`              | Split large file into smaller ones |
+| `expand`, `unexpand` | Convert between tabs and spaces    |
+| `wc`                 | Word/line/character count          |
+| `look`               | Find lines in sorted data          |
+| `gzip`, `gunzip`     | Compress or decompress files       |
+| `zcat`, `zmore`      | View compressed file content       |
+| `zcmp`, `zdiff`      | Compare compressed files           |
+
+## 7 - PROCESS MANAGEMENT
+
+| **Command**                       | **Description**                      |   |
+| --------------------------------- | ------------------------------------ | - |
+| `ps`, `ps -ef`                    | Show current running processes       |   |
+| \`ps -ef                          | grep processname\`                   |   |
+| `top`, `htop`                     | Show real-time process usage         |   |
+| `kill pid`, `killall processname` | Terminate processes                  |   |
+| `program &`                       | Run process in background            |   |
+| `bg`, `fg`, `fg n`                | Manage jobs in background/foreground |   |
+
+## 8 - FILE PERMISSIONS
+
+| **Permission String** | **chmod Command**    |
+| --------------------- | -------------------- |
+| `rwxrwxrwx`           | `chmod 777 filename` |
+| `rwxrwxr-x`           | `chmod 775 filename` |
+| `rwxr-xr-x`           | `chmod 755 filename` |
+| `rw-rw-r--`           | `chmod 664 filename` |
+| `rw-r--r--`           | `chmod 644 filename` |
+
+**Legend:**
+
+* U = User
+* G = Group
+* W = World
+* r = Read
+* w = Write
+* x = Execute
+* * \= No Access
+
+## 9 - SYSTEM LOGS & AUDIT
+
+| **Command**                      | **Description**                                 |
+|----------------------------------|-------------------------------------------------|
+| `dmesg`                          | Show boot and kernel messages                   |
+| `journalctl`                     | Query and display messages from the journal     |
+| `tail -f /var/log/syslog`       | View live system logs                           |
+| `less /var/log/auth.log`        | View authentication log                         |
+| `ausearch`                       | Search audit logs (requires auditd)             |
+| `auditctl -s`                   | Show audit status (requires auditd)             |
+
+---
+
+## 10 - NETWORKING
+
+| **Command**                | **Description**                                 |
+|----------------------------|-------------------------------------------------|
+| `ip a`                     | Show IP addresses and interfaces                 |
+| `ip r`                     | Show IP routing table                           |
+| `ss -tuln`                 | Show listening ports and services                |
+| `netstat -tuln`            | Legacy command for checking ports                |
+| `ping <host>`              | Send ICMP echo requests                          |
+| `traceroute <host>`        | Show route taken to reach a host                 |
+| `dig <domain>`             | DNS query tool                                  |
+| `nslookup <domain>`        | DNS lookup tool                                 |
+| `host <domain>`            | Find IP address of a domain                      |
+
+---
+
+## 11 - FILE PERMISSIONS & OWNERSHIP
+
+| **Command**                | **Description**                                 |
+|----------------------------|-------------------------------------------------|
+| `ls -l`                    | List files with permissions                     |
+| `chmod +x file.sh`         | Make file executable                            |
+| `chmod 755 file`           | Set rwxr-xr-x permissions                        |
+| `chown user:group file`    | Change file owner and group                     |
+| `chgrp group file`         | Change group ownership                          |
+
+---
+
+## 12 - FILE & DIRECTORY OPERATIONS
+
+| **Command**                | **Description**                                 |
+|----------------------------|-------------------------------------------------|
+| `cp file1 file2`           | Copy file                                       |
+| `mv file1 dir/`            | Move or rename file                             |
+| `rm file`                  | Delete file                                     |
+| `mkdir dir`                | Create directory                                |
+| `rmdir dir`                | Remove empty directory                          |
+| `rm -r dir`                | Remove directory and contents                   |
+| `find / -name file.txt`    | Search for a file                               |
+| `locate file.txt`          | Search using pre-built database                 |
+
+---
+
+## 13 - PROCESS MANAGEMENT
+
+| **Command**                | **Description**                                 |
+|----------------------------|-------------------------------------------------|
+| `ps aux`                   | View running processes                          |
+| `top`                      | Live view of CPU/memory usage                   |
+| `htop`                     | Interactive process viewer (if installed)       |
+| `kill <pid>`               | Kill process by PID                             |
+| `killall <process>`        | Kill process by name                            |
+| `nice`                     | Launch with priority                            |
+| `renice`                   | Change priority of a running process            |
+
+---
+
+## 14 - USER MANAGEMENT
+
+| **Command**                | **Description**                                 |
+|----------------------------|-------------------------------------------------|
+| `whoami`                   | Show current user                               |
+| `id`                       | Show UID, GID, and groups                       |
+| `adduser newuser`          | Add new user                                    |
+| `passwd newuser`           | Set/change password                             |
+| `deluser username`         | Delete a user                                   |
+| `usermod -aG sudo user`    | Add user to sudo group                          |
+| `groups username`          | Show groups of a user                           |
+
+---
+
+## 15 - PACKAGE MANAGEMENT (APT - DEBIAN/UBUNTU)
+
+| **Command**                    | **Description**                                 |
+|--------------------------------|-------------------------------------------------|
+| `sudo apt update`             | Update package lists                            |
+| `sudo apt upgrade`            | Upgrade all installed packages                  |
+| `sudo apt install package`    | Install package                                 |
+| `sudo apt remove package`     | Remove package                                  |
+| `sudo apt purge package`      | Remove package and config files                 |
+| `dpkg -i file.deb`            | Install .deb package                            |
+| `dpkg -l`                     | List all installed packages                     |
+
+---
+
+## 16 - ARCHIVING & COMPRESSION
+
+| **Command**                     | **Description**                                |
+|----------------------------------|------------------------------------------------|
+| `tar -cvf file.tar folder/`     | Create a tar archive                           |
+| `tar -xvf file.tar`             | Extract tar archive                            |
+| `tar -czvf file.tar.gz folder/` | Create compressed tar.gz archive               |
+| `gzip file`                     | Compress file                                  |
+| `gunzip file.gz`                | Decompress file                                |
+| `zip file.zip file1 file2`     | Create zip archive                             |
+| `unzip file.zip`               | Extract zip archive                            |
+
+---
+
+## 17 - SHELL SHORTCUTS & TRICKS
+
+| **Command/Shortcut**       | **Description**                                 |
+|----------------------------|-------------------------------------------------|
+| `!!`                       | Run last command again                          |
+| `!xyz`                     | Run last command starting with xyz              |
+| `Ctrl + C`                 | Cancel current command                          |
+| `Ctrl + D`                 | Logout or exit terminal                         |
+| `Ctrl + R`                 | Search command history                          |
+| `history`                  | Show command history                            |
+| `alias ll='ls -l'`         | Create alias for a command                      |
+
+---
